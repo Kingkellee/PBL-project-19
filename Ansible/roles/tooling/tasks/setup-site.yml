@@ -1,9 +1,9 @@
 - name: Clone the repository
   ansible.builtin.git:
-   repo: https://github.com/Livingstone95/tooling-1.git
-   clone: yes
-   dest: /home/ec2-user/tooling
- 
+    repo: https://github.com/Kingkellee/tooling-1.git
+    clone: yes
+    dest: /home/ec2-user/tooling
+
 - name: copy the html from tooling to /var/www/html
   ansible.builtin.copy:
     src: /home/ec2-user/tooling/html/.
@@ -22,4 +22,3 @@
     ignore_selinux_state: yes
     setype: httpd_sys_content_t
   notify: Restart httpd
-
